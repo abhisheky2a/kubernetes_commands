@@ -1,0 +1,13 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: demo-microservice-dev
+data:
+  application.properties: |-
+    demo-microservice.name: DemoMicroserviceDev
+    demo-microservice.function: testKubernetesInDev
+    logging.level: INFO
+    logging.level.org.zalando.logbook: TRACE
+    spring.cloud.kubernetes.discovery.all-namespaces: true
+    feign.client.config.default.readTimeout: 10000
+    feign.client.config.default.connectTimeout: 10000

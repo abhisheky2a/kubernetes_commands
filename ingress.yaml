@@ -1,0 +1,20 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: gateway-ingress
+  annotations:
+    ingress.kubernetes.io/query-routing: default/query-routing
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /demo
+        backend:
+          serviceName: demo-microservice
+          servicePort: 8051
+  - http:
+      paths:
+      - path: /mock
+        backend:
+          serviceName: mock-microservice
+          servicePort: 8052

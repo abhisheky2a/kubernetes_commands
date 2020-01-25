@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-microservice
+  labels:
+    app: demo-microservice
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demo-microservice
+  template:
+    metadata:
+      labels:
+        app: demo-microservice
+    spec:
+      containers:
+      - name: demo-microservice
+        image: abhi/demo-microservice:1.0
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8051

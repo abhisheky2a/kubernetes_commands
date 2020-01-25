@@ -1,0 +1,11 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: mock-microservice-dev
+data:
+  application.properties: |-
+    mock-microservice.apigeeTargetUrl: https://mocktarget.apigee.net/json
+    logging.level: INFO
+    logging.level.org.zalando.logbook: TRACE
+    spring.cloud.kubernetes.discovery.all-namespaces: true
+    spring.resources.add-mappings: true

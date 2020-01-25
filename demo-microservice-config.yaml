@@ -1,0 +1,8 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: demo-microservice
+data:
+  application.properties: |-
+    demo-microservice.name: DemoMicroserviceDefault
+    demo-microservice.function: testKubernetesInDefaultEnv
